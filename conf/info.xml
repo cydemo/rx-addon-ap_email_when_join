@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">회원 가입시 이메일 알림 애드온</title>
+	<description xml:lang="ko">회원 가입시 알림용 이메일을 전송할 수 있습니다. 이메일 제목과 내용에 다음과 같이 중괄호로 이뤄진 매크로를 활용할 수 있습니다.
+		{SITE_NAME}(사이트 이름), {USER_ID}(아이디), {USER_NAME}(이름), {NICK_NAME}(닉네임), {EMAIL}(메일 주소), {REGDATE}(가입일), {PASSWORD}(암호화된 비밀번호)</description>
+	<version>0.3</version>
+	<date>2020-05-09</date>
+	<author email_address="cydemo@gmail.com" link="https://xetown.com">
+		<name xml:lang="ko">cydemo</name>
+	</author>
+	<extra_vars>
+		<group>
+			<title xml:lang="ko">1. 관리자에게 알림</title>
+			<var name="to_admin" type="select">
+				<title xml:lang="ko">수신자 범위</title>
+				<options value="W">
+					<title xml:lang="ko">웹마스터에게만 발신</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">관리그룹 모두에 발신</title>
+				</options>
+				<options value="">
+					<title xml:lang="ko">누구에게도 발신하지 않음</title>
+				</options>
+			</var>
+			<var name="ttl_to_admin" type="text">
+				<title xml:lang="ko">알림 제목</title>
+				<description xml:lang="ko">이메일에 들어갈 제목</description>
+			</var>
+			<var name="msg_to_admin" type="textarea">
+				<title xml:lang="ko">알림 내용</title>
+				<description xml:lang="ko">HTML 사용. 애드온 설명 부분에서 중괄호로 이뤄진 매크로 참조</description>
+			</var>
+		</group>
+		<group>
+			<title xml:lang="ko">2. 가입자에게 알림</title>
+			<var name="to_member" type="select">
+				<title xml:lang="ko">수신자 범위</title>
+				<options value="M">
+					<title xml:lang="ko">메일링 허용 가입자에게만 발신</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">모든 가입자에게 일괄 발신</title>
+				</options>
+				<options value="">
+					<title xml:lang="ko">누구에게도 발신하지 않음</title>
+				</options>
+			</var>
+			<var name="ttl_to_member" type="text">
+				<title xml:lang="ko">알림 제목</title>
+				<description xml:lang="ko">이메일에 들어갈 제목</description>
+			</var>
+			<var name="msg_to_member" type="textarea">
+				<title xml:lang="ko">알림 내용</title>
+				<description xml:lang="ko">HTML 사용. 애드온 설명 부분에서 중괄호로 이뤄진 매크로 참조</description>
+			</var>
+		</group>
+	</extra_vars>
+</addon>
